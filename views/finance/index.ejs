@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+    <link rel="stylesheet" href="/css/learn.css">
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+</head>
+
+<body>
+    <img src="/images/learn-images/learn_back.jpeg" alt="opps" id="wxyz">
+
+    <div id="header-container">
+        <%- include('../includes/navbar.ejs') %>
+
+        <div id="head-contain">
+            <div id="left">
+                <div class="leftContent">
+                    <div class="leftHead"><span id="learn">Finance page</span> <span id="element"></span></div>
+                    <div id="para">
+                        <p>Personal finance is a broad term that encompasses a variety of concepts, including managing your money, saving, and investing.
+                            It also involves banking, budgeting, mortgages, investments, insurance, retirement planning, and tax planning.
+                            Essentially, personal finance covers the entire industry that provides financial services to individuals and advises them about financial and investment opportunities.
+                            In this chapter, we will explore the fundamental concepts of personal finance, their significance, and practical strategies to manage your finances effectively.
+                        </p>
+                    </div>
+                    <a href="#finance-more">
+                        <button id="explore">Explore More</button>
+                    </a>
+                </div>
+            </div>
+            <div id="right">
+                
+        <dotlottie-player src="https://lottie.host/97b5263f-2803-437b-8e26-2dbf1493fb5a/6vDfeArVOL.json" background="transparent" speed="1" style="width: 70%; height: 70%; margin-top: 10rem; margin-left: 4rem;" loop autoplay></dotlottie-player> 
+                
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="container">
+
+        <h1 id="finance-more" style="margin-left: 4.3rem; margin-bottom: 3rem; color: #03045e;">Learn More</h1>
+
+        <div id="finance-boxContainer">
+
+            <div id="finance-chp1" class="chp card finance-chp chpT">
+                <div id="chp-content" style="padding: 2rem;">Personal Finance</div>
+            </div>
+            <div id="finance-chp2" class="chp card finance-chp chpC">
+             
+                    <div id="chp-content" style="padding: 2rem;">Important Terms</div>
+         
+            </div>
+            <div id="finance-chp3" class="chp card finance-chp chpL">
+                
+                    <div id="chp-content" style="padding: 2rem;">Understand Income</div>
+            
+            </div>
+            <div id="finance-chp4" class="chp card finance-chp chpT">
+                
+                    <div id="chp-content" style="padding: 2rem;">Budgeting Basics</div>
+            
+            </div>
+            <div id="finance-chp5" class="chp card finance-chp chpC">
+                
+                    <div id="chp-content" style="padding: 2rem;">Savings Strategies</div>
+            
+            </div>
+            <div id="finance-chp6" class="chp card finance-chp chpL">
+                
+                    <div id="chp-content" style="padding: 2rem;">Debt Management</div>
+            
+            </div>
+            <div id="finance-chp7" class="chp card finance-chp chpT">
+                
+                    <div id="chp-content" style="padding: 2rem;">Credit Scores</div>
+            
+            </div>
+            <div id="finance-chp8" class="chp card finance-chp chpT">
+                
+                    <div id="chp-content" style="padding: 2rem;">Investment Fundamentals</div>
+            
+            </div>
+            <div id="finance-chp9" class="chp card finance-chp chpT">
+                
+                    <div id="chp-content" style="padding: 2rem;">Tax Essentials</div>
+            
+            </div>
+        </div>
+
+    </div>
+    <%- include('../includes/footer.ejs') %>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp1');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter1', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+    
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp2');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter2', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp3');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter3', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp4');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter4', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp5');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter5', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp6');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter6', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp7');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter7', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp8');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter8', '_blank'); // Opens the file in a new tab
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const clickableDiv = document.getElementById('finance-chp9');
+
+            clickableDiv.addEventListener('click', function () {
+                window.open('/finance/chapter9', '_blank'); // Opens the file in a new tab
+            });
+        });
+    </script>
+
+<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate.ejs',{title:'EMI'}) %>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+  .heading{
+    color:#fd7e14
+  }
+  .outputs{
+    background-color: #7B2BF9;
+  }
+  @media (max-width:768px) {
+    .legend{
+      display: none;
+    }
+  }
+</style>
+<div class="row mt-3">
+    <div class="col-lg-7">
+      <h4 class="heading fw-bold mt-1 mb-3">EMI Calculator</h4>
+      <form name="myForm">
+        <div class="mb-3">
+          <label for="investment" class="form-label fw-semibold ">Loan Amount</label>
+          <input
+            type="range"
+            class="form-range"
+            id="investment"
+            min="5000"
+            max="1000000"
+            name="investment"
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="rate" class="form-label fw-semibold">Rate of Interest</label>
+          <input
+            type="range"
+            class="form-range"
+            id="rate"
+            name="rate"
+            min="1.0"
+            max="30.0"
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="time" class="form-label fw-semibold">Loan Tenure</label>
+          <input
+            type="range"
+            class="form-range"
+            id="time"
+            name="time"
+            min="1"
+            max="30"
+          />
+        </div>
+      </form>
+  
+      <div class="row gap-1 justify-content-between">
+          <div class="card col-md-6 my-3 p-0 ">
+              <div class="card-header outputs text-white fw-semibold">Your Inputs</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item value-p"></li>
+                <li class="list-group-item value-r"></li>
+                <li class="list-group-item value-t"></li>
+              </ul>
+            </div>
+        
+            <div class="card col-md-5 my-3 p-0">
+              <div class="card-header outputs text-white fw-semibold">Your Outputs</div>
+        
+              <ul class="list-group list-group-flush  ">
+                <li class="list-group-item value-invest"></li>
+                <li class="list-group-item value-return"></li>
+                <li class="list-group-item value-total"></li>
+              </ul>
+            </div>
+      </div>
+    </div>
+    <div id="myDiv" class="col-lg-5 justify-content-center"></div>
+  </div>
+  <script>
+    document.title='EMI Calculator'
+  </script>
+  <script src="/js/emi.js"></script>

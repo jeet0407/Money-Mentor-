@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet" />
+
+   <link rel="stylesheet" href="/css/blog-style/blogs.css">
+   <!-- <link rel="stylesheet" href="/css/blog-style/learn.css"> -->
+
+</head>
+
+<body>
+    <header>
+        <%- include('../includes/navbar.ejs') %>
+        <div class="container">
+          <div class="left">
+            <h1 style="font-size: 4.5rem;">Financial Blogs page</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, nemo!
+            </p>
+  
+            <div class="buttons" style="margin-top: 6rem;">
+              <a href="#blog" class="download-btn">
+                
+                <div class="btn-text">
+                  <div style="height: 8vh; font-size: 1.4rem; text-align: center; text-justify: auto;">Explore More</div>
+                </div>
+              </a>
+  
+            </div>
+          </div>
+  
+          <div class="right">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </header>    
+
+        <section id="blog" style="margin-top: 3rem;">
+            <!-- <h2 style="font-size: 3.5rem; margin-bottom: 4rem; text-align: left; margin-top: -3rem; margin-left: 1rem;" id="blog">Latest Blog Post</h2> -->
+             <h2 style="font-size: 3.5rem; text-align: left;margin-left: 1rem;" >Latest Blogs</h2>
+
+            <div class="latest-post">
+
+                <div class="post">
+                    <a href="/blogs/campus-money-hacks">
+                        <img src="/images/blog-images/blog.jpeg" alt="post">
+                    </a>
+
+                    <a href="/blogs/campus-money-hacks">
+
+                        <h3 class="title">BLOG 1</h3>
+                    </a>
+                    <div class="summary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perspiciatis eaque fugit quam aspernatur eos laudantium 
+                        quibusdam quae distinctio sed veritatis.
+                    </div>
+
+                    <a href="/blogs/campus-money-hacks" class="blog-chp-btn">Read More</a>
+                </div>
+
+
+                <div class="post">
+                    <a href="/blogs/intern-insights">
+                        <img src="/images/blog-images/credit-card.jpeg" alt="post">
+                    </a>
+
+                    <a href="/blogs/intern-insights">
+
+                        <h3 class="title">BLOG 2</h3>
+                    </a>
+                    <div class="summary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perspiciatis eaque fugit quam aspernatur eos laudantium 
+                        quibusdam quae distinctio sed veritatis.
+                    </div>
+
+                    <a href="/blogs/intern-insights" class="blog-chp-btn">Read More</a>
+                </div>
+
+                <div class="post">
+                    <a href="/blogs/rich-dad-poor-dad">
+                        <img src="/images/blog-images/blog.jpeg" alt="post">
+                    </a>
+
+                    <a href="/blogs/rich-dad-poor-dad">
+
+                        <h3 class="title">BLOG 3</h3>
+                    </a>
+                    <div class="summary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perspiciatis eaque fugit quam aspernatur eos laudantium 
+                        quibusdam quae distinctio sed veritatis.
+                    </div>
+
+                    <a href="/blogs/rich-dad-poor-dad" class="blog-chp-btn">Read More</a>
+                </div>
+
+
+                <div class="post col-md-4 my-2">
+                    <a href="/blogs/scholarships">
+                        <img src="/images/blog-images/blog.jpeg" alt="post">
+                    </a>
+
+                    <a href="/blogs/scholarships">
+
+                        <h3 class="title">BLOG 4</h3>
+                    </a>
+                    <div class="summary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perspiciatis eaque fugit quam aspernatur eos laudantium 
+                        quibusdam quae distinctio sed veritatis.
+                    </div>
+
+                    <a href="/blogs/scholarships" class="blog-chp-btn">Read More</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+</body>
+
+</html>

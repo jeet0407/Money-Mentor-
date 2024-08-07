@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Analysis</title>
+    <link rel="stylesheet" href="/css/learn.css">
+
+    
+</head>
+
+<body style="background-image: url('/images/learn-images/chp-hero04.png'); background-repeat: no-repeat;">
+
+    <%- include('../includes/navbar.ejs') %>
+    <div class="chpBox" id="chp6Box">
+        <div id="tob" class="chp6tob">
+            <div id="contentBox" class="chp6contentBox">
+                <h2 style="color: #6540FF;"><u>Table of Contents</u></h2>
+
+                <div id="list" class="listchp6">
+                    <ul>
+
+                        <li><a href="#analysis" class="heading">What is Trend Analysis</a></li>
+                        <li>
+                            <a href="#moving" class="heading">Types of Trend Analysis</a>
+                            <ul>
+                                <li><a href="#moving" class="subheading" style="padding-left: 1.3rem;">Moving Average</a></li>
+                                <li><a href="#momentum" class="subheading"  style="padding-left: 1.3rem;">Momentum Indicators</a></li>
+                                <li><a href="#trendline" class="subheading"  style="padding-left: 1.3rem;">Chart & Patterns</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#conclusion" class="heading">Conclusion</a></li>
+                        
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainContent" id="chp6mainContent">
+            <h1 style="font-size: 5.4rem;">Trend Analysis</h1>
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">A trend is the overall direction of a market or an asset's price.
+                 In technical analysis, trends are identified by trendlines or price action that highlight when the price is making higher swing highs and higher swing lows for an uptrend, or lower swing lows and lower swing highs for a downtrend.</p>
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">Trend analysis is a crucial tool for investors and traders in the stock market. By analyzing trends, individuals can make informed decisions about buying, holding, or selling stocks. This article delves into the fundamentals of trend analysis, the types of trends, and the tools used to identify and interpret them.</p>
+            
+            <h2 id="analysis">What is Trend Analysis</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">Trend analysis is a technique used in technical analysis that attempts to predict future stock price movements based on recently observed trend data. 
+                Trend analysis uses historical data, such as price movements and trade volume, to forecast the long-term direction of market sentiment.</p>
+
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">
+                It is a technique used to predict future movements in stock prices by examining historical data.
+                 This method is fundamental for investors and traders who aim to make informed decisions based on past market behavior.
+                  By identifying patterns and trends, they can anticipate future price movements and make strategic investment choices.
+            </p>
+
+            <ul>
+                <li><h3 id="moving">Moving Average</h3></li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">In the world of finance, moving average or MA refers to a stock indicator that traders use when undertaking technical analysis. 
+                    The main purpose of computing moving averages is to reduce the impact of short-term price fluctuations of a stock over a specific period of time.  </p>
+
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">Traders who opt for this strategy enter long positions when a short-term MA moves above a long-term MA. 
+                        On the other hand, when the short-term MA moves below the long-term MA, traders who choose this strategy enter short positions.</p>
+                        <img src="//movingAvg.jpg" id="MovingAvg">
+
+                    <li><h3 id="momentum">Momentum Indicators</h3></li>
+        
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">One may utilize this tool to determine the weaknesses and strengths of a stock’s price. 
+                         Momentum gauges the rate at which the price of a stock increases or decreases. 
+                        Some common examples of momentum indicators are moving average convergence divergence (MACD) and relative strength index (RSI).</p>
+
+                        <p style="font-size: 1.2rem; line-height: 1.8rem;">This strategy involves entering a long position when the price of a stock is moving upwards or downwards with a lot of momentum. 
+                            That said, investors following this strategy square off their long position when the shares of the company lose momentum.
+                             In most cases, individuals use the relative strength index (RSI) when implementing this strategy.</p>
+
+                            <img src="//momentum.png" id="indicator">
+                             <li><h3 id="trendline">Trendlines and Chart Patterns</h3></li>
+                             <p style="font-size: 1.2rem; line-height: 1.8rem;">Trendlines refer to a sequence of lines and curves that are used in technical analysis to identify price patterns.
+                                 Traders can use this tool to spot support and resistance on a stock price chart.</p>
+
+                                <p style="font-size: 1.2rem; line-height: 1.8rem;">Individuals who choose this Stock Market trend analysis strategy enter long positions when the equity shares of any company are trending higher.
+                                     Moreover, this method involves placing a stop-loss order below the resistance or support levels, i.e., the key trendline. </p>
+                                    <img src="//trendLine.png" id="trendLine">
+                    </ul>
+
+                    <h1 id="conclusion">Conclusion</h1>
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">Trend analysis is the study of data to identify patterns or trends that can be used to make investment decisions. 
+                        This type of analysis is typically used to analyse the performance of a particular security, such as a stock or bond, over a given period of time. 
+                        By studying trends in data, investors can make informed decisions about whether to buy, sell, or hold a particular security.
+                         There are several different methods that can be used to analyse trends, including technical analysis, which uses charts and other graphical tools to identify patterns in price and volume data, and fundamental analysis, which focuses on a company's financial health and industry conditions to make investment decisions.
+                          Trend analysis can thus incorporate a variety of data sources, including price charts, financial statements, economic indicators, and market data.</p>
+
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+
+    <script src="/js/scroll.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+</body>
+
+</html>

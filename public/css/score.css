@@ -1,0 +1,106 @@
+* {
+    font-family: 'Ruberoid', sans-serif;
+}
+
+@font-face {
+    font-family: 'Ruberoid';
+    src: url('../font/subset-Ruberoid-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ruberoid-font {
+    font-family: 'Ruberoid', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/backers-section-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.Financial-score-container {
+    border-radius: 1%;
+    height: fit-content;
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.541);
+    margin-top: 80px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Financial-score-container::before {
+    content: '';
+    filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: calc(100%);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+.result-container {
+    text-align: center;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
+
+#scoreDisplay {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+canvas {
+    margin: auto;
+    display: block;
+}
+
+@media(max-width:600px){
+    
+}

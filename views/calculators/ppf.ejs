@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate.ejs') %>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+  .heading{
+    color:#fd7e14
+  }
+  .outputs{
+    background-color: #7B2BF9;
+  }
+  @media (max-width:768px) {
+    .legend{
+      display: none;
+    }
+  }
+</style>
+<div class="row mt-3">
+    <div class="col-lg-7">
+      <h4 class="heading mt-1 mb-3 fw-bold">PPF Calculator</h4>
+      <form name="myForm">
+        <div class="mb-3">
+          <label for="investment" class="form-label fw-semibold">Total Investment</label>
+          <input
+            type="range"
+            class="form-range"
+            id="investment"
+            min="500"
+            max="150000"
+            name="investment"
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="rate" class="form-label fw-semibold">Rate</label>
+          <input
+            type="range"
+            class="form-range"
+            id="rate"
+            name="rate"
+            value="7.1"
+            disabled
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="time" class="form-label fw-semibold">Time period</label>
+          <input
+            type="range"
+            class="form-range"
+            id="time"
+            name="time"
+            min="15"
+            max="50"
+          />
+        </div>
+      </form>
+  
+      <div class="row gap-1 justify-content-between">
+          <div class="card col-md-5 my-3 p-0">
+              <div class="card-header outputs text-white fw-semibold">Your Inputs</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item value-p"></li>
+                <li class="list-group-item value-r">Rate : 7.1%</li>
+                <li class="list-group-item value-t"></li>
+              </ul>
+            </div>
+        
+            <div class="card col-md-5 my-3  p-0">
+              <div class="card-header outputs text-white fw-semibold">Your Outputs</div>
+        
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item value-invest"></li>
+                <li class="list-group-item value-return"></li>
+                <li class="list-group-item value-total"></li>
+              </ul>
+            </div>
+      </div>
+    </div>
+    <div id="myDiv" class="col-lg-5 justify-content-center "></div>
+  </div>
+  <script>
+    document.title='PPF Calculator'
+  </script>
+  <script src="/js/ppf.js"></script>

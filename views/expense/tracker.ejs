@@ -1,0 +1,138 @@
+<% layout('layouts/expenseTracker.ejs',{user}) %>
+<style>
+  .body-expense {
+    background-color: rgb(246, 205, 94);
+  }
+  .heading{
+    background-color: #7B2BF9;;
+  }
+  @media (max-width:768px) {
+    .serial{
+      display: none;
+    }
+  }
+</style>
+<div class="container">
+  <div class="row mt-3">
+    <h4 class="text-center mb-4 mt-md-3 text-decoration-underline">Track your expense</h4>
+    <form
+      action="/user/dashboard/tracker"
+      class="needs-validation justify-content-center p-0"
+      method="post"
+      novalidate
+    >
+      <div class="row">
+        <div class="col-md-8">
+          <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Title :</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              required
+              class="form-control"
+              placeholder="Enter the name of goods"
+            />
+            <div class="invalid-feedback">Title required!</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label for="category" class="form-label fw-semibold">Category :</label>
+            <select name="category" id="category" class="form-select" required>
+              <option selected value="">Choose category</option>
+              <option value="Housing">Housing</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Food">Food</option>
+              <option value="Insurance">Insurance</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Education">Education</option>
+              <option value="Savings">Savings</option>
+              <option value="Others">Others</option>
+            </select>
+            <div class="invalid-feedback">Please choose category !</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="amount" class="form-label fw-semibold ">Amount :</label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              min="1"
+              required
+              class="form-control"
+              placeholder="₹ 70 "
+            />
+            <div class="invalid-feedback">Please enter amount!</div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="date" class="form-label fw-semibold">Date :</label>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              required
+              class="form-control"
+            />
+            <div class="invalid-feedback">Please choose date!</div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-outline-success offset-md-5 my-2 d-flex align-items-center gap-2"
+      >
+        <lord-icon
+          src="https://cdn.lordicon.com/jgnvfzqg.json"
+          trigger="hover"
+          style="width: 25px; height: 25px"
+        >
+        </lord-icon
+        >Add Expense
+      </button>
+    </form>
+    <% if(user.expenses.length==0){ %>
+      <h4 class="px-0 my-2">Start now ...</h4>
+      <% } else{ %>
+        <h5 class="p-0 my-3">Last Expenses :</h5>
+        <div>
+          <div class="heading row  text-white fw-bold">
+            <p class="col-1 mb-0 py-2 serial">Sr No.</p>
+            <p class="col-6 mb-0 py-2">Title</p>
+            <p class="col-2 mb-0 py-2">Price</p>
+            <p class="col-2 mb-0 py-2">Date</p>
+            <p class="col-1 mb-0 py-2">Tools</p>
+          </div>
+          <% for(let i=0; i<user.expenses.length && i<5;i++) { %>
+            <div class="body-expense row fw-semibold mt-1">
+              <p class="col-1 mb-0 py-2 serial"><%= i+1 %>.</p>
+              <p class="col-6 mb-0 py-2"><%= user.expenses[i].title %></p>
+              <p class="col-2 mb-0 py-2">₹ <%= user.expenses[i].amount %></p>
+              <p class="col-2 mb-0 py-2"><%= user.expenses[i].date.toString().split(" ").slice(1,4).join(" ") %></p>
+              <form action="/user/dashboard/tracker/<%= user.expenses[i]._id %>?_method=DELETE" method="post" class="col-1 ">
+                <button class="btn  mb-0 py-2 border  border-0">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/skkahier.json"
+                    trigger="hover"
+                    style="width: 25px; height: 25px"
+                  >
+                  </lord-icon>
+                </button>
+              </form>
+            </div>
+          <% } %>
+        </div>
+        <% } %>
+  </div>
+</div>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<script src="/js/validation.js"></script>

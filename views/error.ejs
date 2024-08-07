@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate.ejs') %>
+<div class="row mt-4">
+  <div class="card mb-3 col-sm-8 offset-sm-2 ">
+    <div class="row g-0 align-items-center">
+      <div class="col-sm-5 col-4">
+        <img
+          src="/images/error.gif"
+          class="img-fluid rounded-start"
+          alt="error-image"
+        />
+      </div>
+      <div class="col-sm-7 col-12 ">
+        <div class="card-body">
+          <h3 class="card-title">Error Occured</h3>
+          <p class="card-text my-3"><%= message %></p>
+          <a href="/" class="btn btn-outline-danger">Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

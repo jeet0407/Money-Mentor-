@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Candlestick Pattern</title>
+    <link rel="stylesheet" href="/css/learn.css">
+
+  
+    </style>
+</head>
+
+<body style="background-image: url('/images/learn-images/chp-hero04.png'); background-repeat: no-repeat;">
+    <%- include('../includes/navbar.ejs') %>
+    <div class="chpBox" id="chp3Box">
+        <div id="tob" class="chp3tob">
+            <div id="contentBox" id="chp3contentBox">
+                <h2 style="color:#6540FF;"><u>Table of Contents</u></h2>
+                <div id="list" class="listchp3">
+                    <ul>
+                        
+                        <li><a href="#components" class="heading">Components</a></li>
+                        <li><a href="#reading" class="heading">Reading</a></li>
+
+                        <li>
+                        <li><a href="#types" class="heading">Types of candlestick</a></li>
+                            
+                            <ul>
+                                <li><a href="#hammer" class="subheading">Hammer</a></li>
+                                <li><a href="#hanging" class="subheading">Hanging Man</a></li>
+                                <li><a href="#inverted" class="subheading">Inverted Hammer</a></li>
+                                <li><a href="#shoot" class="subheading">Shooting Star</a></li>
+                                <li><a href="#dragon" class="subheading">Dragon Fly Doji</a></li>
+                                <li><a href="#grave" class="subheading">Grave Stone Doji</a></li>
+                                <li><a href="#spinning" class="subheading">Spinning Top</a></li>
+                                <li><a href="#marubozu" class="subheading">Marubozu</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainContent" id="chp3mainContent">
+
+            <h1 style="font-size: 5.4rem;">Single Candlestick Pattern</h1>
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">Candlesticks are a type of chart used in financial markets to represent the price movement of an asset
+                over a specific period.
+                They provide a visual summary of an asset's price action, indicating the opening, closing, high, and low
+                prices within the selected timeframe. </p>
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">Candlestick charts are widely used in technical analysis due to their ability to convey detailed
+                information and identify potential market trends and patterns.</p>
+    
+            <ol>
+                <h2 id="components">Components of Candlestick</h2>
+                <li>
+                    <h3>Body</h3>
+                    <ul>
+                        <li>
+                            <h4>Description</h4>
+                            <p style="font-size: 1.2rem; line-height: 1.8rem;">The rectangular area between the opening and closing prices.</p>
+                        </li>
+    
+                        <li>
+                            <h4>Colour</h4>
+                            <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">A green (or white) body indicates a closing price higher than the opening price (bullish),</span> 
+                               <span id="purple">while a red (or black) body indicates a closing price lower than the opening price (bearish).</span></p>
+                        </li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <h3>Wicks (Shadows)</h3>
+                    <ul>
+                        <li>
+                            <h4>Description</h4>
+                            <p style="font-size: 1.2rem; line-height: 1.8rem;">The thin lines extending from the body to the high and low prices.</p>
+                        </li>
+                        <li>
+                            <h4>Upper Wick</h4>
+                            <p style="font-size: 1.2rem; line-height: 1.8rem;">Extends from the top of the body to the highest price.</p>
+                        </li>
+                        <li>
+                            <h4>Lower Wick</h4>
+                            <p style="font-size: 1.2rem; line-height: 1.8rem;">Extends from the bottom of the body to the lowest price.</p>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+    
+            <h2 id="reading">Reading a Candlestick</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">Certainly! A candlestick chart is a type of financial chart that displays the price action for an
+                investment market, such as a currency or a security. Let’s break down how to read a candlestick:</p>
+            <ul>
+                <li>
+                    <h4>Open Price</h4>
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">The price at which the asset started trading within the period.</p>
+                </li>
+    
+                <li>
+                    <h4>Close Price</h4>
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">The price at which the asset finished trading within the period.</p>
+                </li>
+    
+                <li>
+                    <h4>Upper Wick</h4>
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">The highest price reached during the period.</p>
+                </li>
+    
+                <li>
+                    <h4>Lower Wick</h4>
+                    <p style="font-size: 1.2rem; line-height: 1.8rem;">The lowest price reached during the period.</p>
+                </li>
+            </ul>
+    
+            <h2 id="types">Types Of Candlestick</h2>
+    
+            <p style="font-size: 1.2rem; line-height: 1.8rem;">Candlestick charts are a type of financial chart used to describe price movements of a security,
+                derivative, or currency.
+                Each candlestick typically shows one day, though <span id="purple">candlesticks can be adapted to represent any time
+                period.</span>
+                Here are the primary types of candlesticks and candlestick patterns:</p>
+    
+            <ul>
+                <li>
+                    <h2 id="hammer">Hammer</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Hammer is a single candlestick pattern formed at the end of a downtrend that signals a bullish reversal.</span>
+                    The real body is small and located at the top, with a long lower shadow, and little to no upper shadow.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The psychology behind this candle formation is that the prices opened, sellers pushed the prices down,
+                    but then buyers drove the price up to close more than the opening price. Hence it is believed to be a
+                    <span id="purple">bullish candlestick pattern.</span></p>
+    
+                <img src="/images/learn-images/hammer.png" id="hammerPhotu" alt="Hammer Photo">
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">This resulted in the formation of a bullish pattern and signifies that buyers are back in the market.</span>
+                    Traders can enter a long position if the next day a bullish candle is formed and can place a stop-loss
+                    at the low of the Hammer.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">Below is an example of the Hammer candlestick pattern:</p>
+    
+                <img src="/images/learn-images/hammerChart.png" alt="Hammer Chart" id="hammerChart">
+    
+                <li>
+                    <h2 id="hanging">Hanging Man</h2>
+                </li>
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Hanging Man candlestick pattern is characterized by a short body and a long lower shadow,</span> with little to no upper shadow. If the candlestick is green or white, the asset closed higher than it opened. If it is red or black, it closed lower than it opened.</p>
+    
+                <img src="/images/learn-images/hangingMan.jpg" alt="Hanging Man" id="hangingManPhotu">
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">Candlestick pattern traders believe the Hanging Man is a bearish reversal indicator.</span> It should be preceded by an uptrend and followed by a confirmation candle the next day.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">Such occurrences can foreshadow a further bearish move up to 70% of the time.</p>
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The chart below shows two Hanging Man patterns for Meta (META) stock, both of which led to at least
+                    short-term moves lower in the price.</p>
+    
+                <img src="/images/learn-images/hangingManChart.png" alt="Hanging Man Chart" id="hangingManChart">
+    
+                <li>
+                    <h2 id="inverted">Inverted Hammer</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Inverted Hammer is a bullish reversal pattern that forms at the bottom of a downtrend.</span> It has a small real body near the bottom, a long upper wick, and little or no lower shadow.</p>
+                <img src="/images/learn-images/invertedHammer.png" alt="Inverted Hammer" id="invertedHammerPhotu">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The Inverted Hammer pattern suggests that buyers are starting to take control, signaling a potential upward price swing.</p>
+    
+                <img src="/images/learn-images/invertedChart.png" id="invertedHammerChart" alt="Inverted Hammer Chart">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Inverted Hammer is significant as a bullish reversal signal,</span> indicating a shift in market sentiment from bearish to bullish during a downtrend.</p>
+    
+                <li>
+                    <h2 id="shoot">Shooting Star</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Shooting Star is a bearish candlestick with a long upper shadow and a small real body near the low of the day.</span> It appears after an uptrend.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The long upper shadow indicates that buyers pushed the price higher but sellers brought it back down by the close.</p>
+    
+                <img src="/images/learn-images/shootingStar.png" alt="Shooting Star" id="shootingStarPhotu">
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">This pattern suggests a potential price top and reversal. The shooting star should be followed by a confirmation candle that closes lower.</p>
+    
+                <img src="/images/learn-images/shootingStarChart1.jpg" alt="Shooting Star Chart" id="shootingChart">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The chart example shows how the Shooting Star can indicate a price reversal after an uptrend.</p>
+    
+                <li>
+                    <h2 id="dragon">Dragon Fly Doji</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Dragonfly Doji is a candlestick pattern with a long lower shadow and a small real body at the top.</span> It signifies indecision and potential reversal from a downtrend to an uptrend.</p>
+    
+                <img src="/images/learn-images/dragonflyPhotu.png" alt="Dragon Fly Doji" id="dragonPhoto">
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">Following the Dragonfly Doji, if the price moves higher, it confirms a bullish reversal.</p>
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The example shows a Dragonfly Doji in a sideways correction within a longer-term uptrend.</p>
+    
+                <img src="/images/learn-images/dragonflyChart.jpg" alt="Dragonfly Chart" id="dragonChart">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The Dragonfly Doji pattern and confirmation candle indicate that the short-term correction was over, and the uptrend resumed.</p>
+    
+                <li>
+                    <h2 id="grave">Grave Doji</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Gravestone Doji is a bearish reversal pattern where the open, low, and close are near each other with a long upper shadow.</span> It suggests a potential bearish downtrend after an uptrend.</p>
+    
+                <img src="/images/learn-images/GraveStonePhotu.jpg.gif" alt="Gravestone Doji" id="graveStonePhotu">
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The Gravestone Doji signals that the price might move lower after a high-volume uptrend.</p>
+    
+                <img src="/images/learn-images/graveChart.jpg" alt="Gravestone Doji Chart" id="graveChart">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">In the example, the Gravestone Doji could predict a further breakdown from the current levels.</p>
+    
+                <li>
+                    <h2 id="spinning">Spinning Top</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">A Spinning Top is a candlestick pattern with a small real body and long upper and lower shadows.</span> It represents indecision and indicates that neither buyers nor sellers were able to gain control.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The pattern suggests that the current price trend might be reversing or continuing sideways.</p>
+    
+                <img src="/images/learn-images/spinningPhoto.png" alt="Spinning Top Photo" id="spinningPhotu">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">Examples show how Spinning Tops can indicate market indecision and potential reversal or continuation.</p>
+    
+                <img src="/images/learn-images/spinningTopChart1.jpg" alt="Spinning Top Chart" id="spinningChart">
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">The Spinning Top can help confirm market indecision or a pause in the current trend.</p>
+    
+                <li>
+                    <h2 id="marubozu">Marubozu</h2>
+                </li>
+                <p style="font-size: 1.2rem; line-height: 1.8rem;"><span id="purple">The Marubozu candlestick pattern comes in bullish and bearish forms,</span> showing strong market sentiment without wicks.</p>
+    
+                <img src="/images/learn-images/marubozuPhoto.png" alt="Marubozu Photo" id="marubozuPhotu">
+    
+                <ol>
+                    <li><span id="purple">The Bullish Marubozu indicates strong buying pressure,</span> opening at its low and closing at its high.</li>
+                    <li><span id="purple">The Bearish Marubozu shows dominant selling pressure,</span> opening at its high and closing at its low.</li>
+                </ol>
+    
+                <p style="font-size: 1.2rem; line-height: 1.8rem;">Marubozu patterns show strong trends and are key indicators of potential reversals or continuations.</p>
+    
+                <img src="/images/learn-images/marubozuChart.jpg" alt="Marubozu Chart" id="marubozuChart">
+            </ul>
+    
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+
+    <script src="/js/scroll.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+</body>
+
+</html>

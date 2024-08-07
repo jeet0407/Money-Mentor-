@@ -1,0 +1,49 @@
+<% layout('layouts/expenseTracker.ejs',{user}) %>
+<style>
+    @media (max-width:576px) {
+    .serial{
+      display: none;
+    }
+  }
+</style>
+<div class="container">
+    <div class="row">
+        <h4 class="text-center mt-1 mb-3">Previous <%= title %> Expenses</h4>
+        <div>
+            <% if(user.expenses.length){ %>
+                <div class="heading row bg-primary text-white fw-bold">
+                    <p class="col-1 mb-0 py-2 serial">Sr No.</p>
+                    <p class="col-6 mb-0 py-2">Title</p>
+                    <p class="col-2 mb-0 py-2">Cost</p>
+                    <p class="col-2 mb-0 py-2">Date</p>
+                    <p class="col-1 mb-0 py-2">Tools</p>
+                </div>
+            <% } else { %>      
+                <h6 class="mt-4 mb-3">Track your expense now ...</h6>
+                <a href="/user/dashboard/tracker" class="btn btn-outline-primary">Start Now</a>
+            <% } %>
+
+            <% for(let i=0; i<user.expenses.length;i++) { %>
+              <div class="body-expense row fw-semibold mt-1">
+                <p class="col-1 mb-0 py-2 serial"><%= i+1 %>.</p>
+                <p class="col-6 mb-0 py-2"><%= user.expenses[i].title %></p>
+                <p class="col-2 mb-0 py-2">₹ <%= user.expenses[i].amount %></p>
+                <p class="col-2 mb-0 py-2"><%= user.expenses[i].date.toString().split(" ").slice(1,4).join(" ") %></p>
+                <form action="/user/dashboard/tracker/<%= user.expenses[i]._id %>?_method=DELETE" method="post" class=" col-1 ">
+                  <button class="btn border border-0 ">
+                    <p class=" mb-0 py-1">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/skkahier.json"
+                        trigger="hover"
+                        style="width: 25px; height: 25px"
+                      >
+                      </lord-icon>
+                    </p>
+                  </button>
+                </form>
+              </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>

@@ -1,0 +1,120 @@
+<% layout('layouts/boilerplate.ejs') %>
+<style>
+    .card-img-top{
+        object-fit: contain;
+    }
+    .calculators a{
+        text-decoration: none;
+        margin-bottom:1.5rem ;
+    }
+    .card-img-overlay{
+        opacity: 0;
+    }
+    .card-img-overlay:hover{
+        opacity:1;
+    }
+    .card{
+        box-shadow: 2px 2px 10px purple
+    }
+    body{
+        background-image: url('/images/learn-images/chp-hero04.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: -999;
+    }
+    @media (max-width:576px) {
+        .navbar-nav{
+            background-color: rgba(255,255,255,0.01);
+            backdrop-filter: blur(10px);
+        }
+    }
+</style>
+<div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-3  mt-3 calculators">
+    <a href="/calculator/sip">
+        <div class="card col">
+            <img src="/images/calculator/sip.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">SIP</h5>
+                <p class="card-text">
+                    Calculate how much you need to save or how much you will accumulate with your SIP
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/calculator/lumpsum">
+        <div class="card col">
+            <img src="/images/calculator/lumpsum.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">Lumpsum</h5>
+                <p class="card-text">
+                   Calculate returns for lumpsum investments to achieve your financial goals.
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/calculator/swp">
+        <div class="card col">
+            <img src="/images/calculator/swp.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">SWP</h5>
+                <p class="card-text">
+                    Calculate your final amount with Systematic Withdrawal Plans(SWP)
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/calculator/simple">
+        <div class="card col">
+            <img src="/images/calculator/si.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">Simple Interest</h5>
+                <p class="card-text">
+                    Calculate simple interest on your loans and saving schemes and investments.
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/calculator/inflation">
+        <div class="card col">
+            <img src="/images/calculator/inflation.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">Inflation </h5>
+                <p class="card-text">
+                    It measures how prices changes over time, adjusting for real value comparisons.
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/calculator/emi">
+        <div class="card col">
+            <img src="/images/calculator/emi.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">EMI</h5>
+                <p class="card-text">
+                    Calculate EMI on your loans - home loan ,car loan or personal loan.
+                </p>
+            </div>
+        </div>
+    </a>
+    <a href="/calculator/ppf">
+        <div class="card col">
+            <img src="/images/calculator/ppf.gif" class="card-img-top" alt="SIP_IMAGE" style="height:5rem">
+            <div class="card-img-overlay "><i class="fa-solid fa-circle-dollar-to-slot fa-xl"></i></div>
+            <div class="card-body">
+                <h5 class="card-title fw-semibold">PPF</h5>
+                <p class="card-text">
+                    Calculate your returns on Public Provident Fund (PPF)
+                </p>
+            </div>
+        </div>
+    </a>
+</div>
+<script>
+    document.title='Calculators'
+</script>

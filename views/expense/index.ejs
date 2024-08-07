@@ -1,0 +1,81 @@
+<% layout('layouts/expenseTracker.ejs',{user}) %>
+<style>
+  .expense a {
+    text-decoration: none;
+  }
+  .card-img-top {
+    object-fit: contain;
+  }
+</style>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-3 expense">
+  <a href="/user/dashboard/tracker">
+    <div class="card col mb-3">
+      <img
+        src="/images/expenseTracker/new.jpg"
+        alt=""
+        class="card-img-top"
+        style="height: 10rem"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Add new expense</h5>
+        <p class="card-text">
+          Adding a new expense involves recording details like date, amount,
+          purpose, and vendor for accurate financial tracking.
+        </p>
+      </div>
+    </div>
+  </a>
+  <a href="/user/dashboard/tracker/previousDay">
+    <div class="card col mb-3">
+      <img
+        src="/images/expenseTracker/24-hours.jpg"
+        alt=""
+        class="card-img-top"
+        style="height: 10rem"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Last day</h5>
+        <p class="card-text">
+          Reviewing last day's expenses enhances financial awareness,
+          identifying spending habits and areas for improvement.
+        </p>
+      </div>
+    </div>
+  </a>
+
+  <a href="/user/dashboard/tracker/previousMonth">
+    <div class="card col mb-3">
+      <img
+        src="/images/expenseTracker/month.jpg"
+        alt=""
+        class="card-img-top"
+        style="height: 10rem"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Last month</h5>
+        <p class="card-text">
+          Reviewing last month's expenses enhances financial awareness,
+          identifying spending habits and areas for improvement.
+        </p>
+      </div>
+    </div>
+  </a>
+
+  <a href="/user/dashboard/tracker/previousYear">
+    <div class="card col mb-3">
+      <img
+        src="/images/expenseTracker/year.png"
+        alt=""
+        class="card-img-top rounded-pill py-2"
+        style="height: 10rem"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Last year</h5>
+        <p class="card-text">
+          Reviewing last year's expenses enhances financial awareness,
+          identifying spending habits and areas for improvement.
+        </p>
+      </div>
+    </div>
+  </a>
+</div>

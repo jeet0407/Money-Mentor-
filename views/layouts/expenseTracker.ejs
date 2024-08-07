@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .dashboard {
+        min-height: 100vh;
+      }
+      .brand {
+        height: 50px;
+        object-fit: contain;
+      }
+      .dashboard a {
+        text-decoration: none;
+        border: none;
+        color: black;
+      }
+      .greeting{
+        background-color: #7B2BF9;
+      }
+      @media (min-width: 768px) {
+        .dashboard-footer {
+          font-size: 14px;
+          width: 25%;
+        }
+        .navbar{
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="col-md-3 bg-body-secondary dashboard postion-relative"
+          id="dashboard"
+        >
+          <div class="dashboard-header row mt-3 align-items-center">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c13fa726256647e42d11c66755e14e8ff1b25a0d3efdb5f9409568f2fd954b14?apiKey=363d839212274100ad1df6f187eebe6b&"
+              alt="brand"
+              class="col-3 brand px-0 py-2"
+            />
+            <h5 class="col-9 p-0 mb-0 fw-bold">Money Mentor</h5>
+          </div>
+          <div class="dashboard-body mt-3">
+            <div
+              class="row greeting align-items-center ms-auto  text-white mx-1"
+            >
+              <img
+                src="/images/expenseTracker/user.gif"
+                alt="brand"
+                class="col-2 brand"
+              />
+              <h6 class="col-10 p-0 mb-0">Weclome <%= user.username %></h6>
+            </div>
+            <div class="vstack gap-2 mt-3">
+              <a href="/" class="btn btn-outline-secondary px-0">
+                <div class="hstack gap-3 fw-semibold dashboard-link py-1 ps-2">
+                  <i class="fa-solid fa-house-chimney"></i> Home
+                </div>
+              </a>
+              <a href="/user/dashboard" class="btn btn-outline-secondary px-0">
+                <div class="hstack gap-3 fw-semibold dashboard-link py-1 ps-2">
+                  <i class="fa-solid fa-screwdriver-wrench"></i> Dashboard
+                </div>
+              </a>
+              <a href="/calculator" class="btn btn-outline-secondary px-0">
+                <div class="hstack gap-3 fw-semibold dashboard-link py-1 px-2">
+                  <i class="fa-solid fa-calculator"></i> Calculators
+                </div>
+              </a>
+              <a href="/about" class="btn btn-outline-secondary px-0">
+                <div class="hstack gap-3 fw-semibold dashboard-link py-1 px-2">
+                  <i class="fa-solid fa-comment"></i> About us
+                </div>
+              </a>
+              <a href="/logout" class="btn btn-outline-secondary px-0">
+                <div class="hstack gap-3 fw-semibold dashboard-link py-1 px-2">
+                  <i class="fa-solid fa-right-from-bracket"></i> LogOut
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="dashboard-footer position-fixed bottom-0 fw-semibold text-wrap"
+          >
+            <i class="fa-regular fa-copyright"></i> 2023-2024 Money Mentor Pvt
+            Ltd.
+          </div>
+        </div>
+        <div class="col-md-9">
+          <nav class="navbar navbar-expand-md border-bottom">
+            <div class="container-fluid px-0">
+              <a class="navbar-brand fw-bold" href="/"
+                ><img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c13fa726256647e42d11c66755e14e8ff1b25a0d3efdb5f9409568f2fd954b14?apiKey=363d839212274100ad1df6f187eebe6b&"
+                  alt=""
+                  width="30"
+                  height="35"
+              /></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#dashboard"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </nav>
+          <%- body %>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let dashboard = document.querySelector(".dashboard");
+      const screenWidth = window.screen.width;
+      if (screenWidth <= 768) {
+        dashboard.classList.add("offcanvas");
+        dashboard.style.width = 300 + "px";
+      }
+    </script>
+  </body>
+</html>
