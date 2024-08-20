@@ -6,9 +6,9 @@
     font-style: normal;
 }
 
-.ruberoid-font {
-    font-family: 'Ruberoid', sans-serif;
-}
+
+
+
 
 html , body{
     margin: 0;
@@ -779,7 +779,6 @@ html{
     text-wrap: wrap;
     position: relative;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
   .chp{
@@ -1051,14 +1050,14 @@ html{
 #linephotu{
     width: 65vw;
     height: 70vh;
-    background-image: url('/images/learn-images/line.png');
+    background-image: url('/images/line.png');
     background-size: cover;
 }
 
 #candlephotu{
     width: 65vw;
     height: 70vh;
-    background-image: url("/images/learn-images/Candle.png");
+    background-image: url("/images/Candle.png");
     background-size: cover;
     
 }
@@ -1066,7 +1065,7 @@ html{
 #underCandlephotu{
     width: 35vw;
     height: 40vh;
-    background-image: url("/images/learn-images/understandCandle.png");
+    background-image: url("/images/understandCandle.png");
     background-size: cover;
     margin-left: 4rem;
 }

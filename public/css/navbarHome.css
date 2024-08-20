@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Ruberoid';
-    src: url('../fonts/subset-Ruberoid-Medium.woff') format('woff');
+    src: url('/fonts/subset-Ruberoid-Medium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,7 +16,7 @@
 .hero-container {
     min-height: 100vh;
     z-index: -999;
-    background: url('../images/header\ lap.jpg') no-repeat center center/cover;
+    background: url('/images/header\ lap.jpg') no-repeat center center/cover;
     align-items: center;
     overflow: hidden;
 }

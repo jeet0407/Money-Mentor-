@@ -18,7 +18,6 @@ router.post(
     let data = req.body;
     let user = new User(data);
     let saveUser = await User.register(user, data.password);
-    console.log(saveUser);
     req.login(saveUser, (err) => {
       if (err) return next(err);
       else {
