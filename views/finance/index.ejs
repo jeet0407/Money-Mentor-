@@ -12,24 +12,24 @@
 </head>
 
 <body>
-    <img src="/images/learn-images/learn_back.jpeg" alt="opps" id="wxyz">
+    <!-- <img src="/images/learn-images/learn_back.jpeg" alt="opps" id="wxyz"> -->
+
+    <div id="hero">
 
     <div id="header-container">
         <%- include('../includes/navbar.ejs') %>
 
         <div id="head-contain">
             <div id="left">
-                <div class="leftContent">
+                <div class="leftContent" id="finance-left">
                     <div class="leftHead"><span id="learn">Finance page</span> <span id="element"></span></div>
                     <div id="para">
                         <p>Personal finance is a broad term that encompasses a variety of concepts, including managing your money, saving, and investing.
                             It also involves banking, budgeting, mortgages, investments, insurance, retirement planning, and tax planning.
-                            Essentially, personal finance covers the entire industry that provides financial services to individuals and advises them about financial and investment opportunities.
-                            In this chapter, we will explore the fundamental concepts of personal finance, their significance, and practical strategies to manage your finances effectively.
                         </p>
                     </div>
-                    <a href="#finance-more">
-                        <button id="explore">Explore More</button>
+                    <a href="#boxContainer">
+                        <button id="explore" class="finance-more"">Explore More</button>
                     </a>
                 </div>
             </div>
@@ -42,60 +42,43 @@
         </div>
     </div>
 
+    </div>
 
+    <div id="boxContainer">
 
-    <div id="container">
+        <div id="finance-chp1" class="chp chpT">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Personal Finance</div>
+        </div>
+        <div id="finance-chp2" class="chp chpC">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Important Terms</div>
+        </div>
+        <div id="finance-chp3" class="chp chpL">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Understand Income</div>
+        </div>
+        <div id="finance-chp4" class="chp chpT">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Budgeting Basics</div>
+        </div>
+        <div id="finance-chp5" class="chp chpC">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Savings Strategies</div>
+        </div>
+        <div id="finance-chp6" class="chp chpL">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Debt Management</div>
+        </div>
+        <div id="finance-chp7" class="chp chpT">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Credit Scores</div>
+        </div>
 
-        <h1 id="finance-more" style="margin-left: 4.3rem; margin-bottom: 3rem; color: #03045e;">Learn More</h1>
+        <div id="finance-chp8" class="chp chpT">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Investment Fundamentals</div>
+        </div>
 
-        <div id="finance-boxContainer">
-
-            <div id="finance-chp1" class="chp card finance-chp chpT">
-                <div id="chp-content" style="padding: 2rem;">Personal Finance</div>
-            </div>
-            <div id="finance-chp2" class="chp card finance-chp chpC">
-             
-                    <div id="chp-content" style="padding: 2rem;">Important Terms</div>
-         
-            </div>
-            <div id="finance-chp3" class="chp card finance-chp chpL">
-                
-                    <div id="chp-content" style="padding: 2rem;">Understand Income</div>
-            
-            </div>
-            <div id="finance-chp4" class="chp card finance-chp chpT">
-                
-                    <div id="chp-content" style="padding: 2rem;">Budgeting Basics</div>
-            
-            </div>
-            <div id="finance-chp5" class="chp card finance-chp chpC">
-                
-                    <div id="chp-content" style="padding: 2rem;">Savings Strategies</div>
-            
-            </div>
-            <div id="finance-chp6" class="chp card finance-chp chpL">
-                
-                    <div id="chp-content" style="padding: 2rem;">Debt Management</div>
-            
-            </div>
-            <div id="finance-chp7" class="chp card finance-chp chpT">
-                
-                    <div id="chp-content" style="padding: 2rem;">Credit Scores</div>
-            
-            </div>
-            <div id="finance-chp8" class="chp card finance-chp chpT">
-                
-                    <div id="chp-content" style="padding: 2rem;">Investment Fundamentals</div>
-            
-            </div>
-            <div id="finance-chp9" class="chp card finance-chp chpT">
-                
-                    <div id="chp-content" style="padding: 2rem;">Tax Essentials</div>
-            
-            </div>
+        <div id="finance-chp9" class="chp chpT">
+            <div id="chp-content" style="padding: 2rem; position: absolute;">Tax Essentials</div>
         </div>
 
     </div>
+
+   
     <%- include('../includes/footer.ejs') %>
 
 

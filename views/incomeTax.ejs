@@ -1,0 +1,270 @@
+<%- include('./includes/navbar.ejs') %>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("/images/header tab.jpg");
+        background-size: cover;
+    }
+
+    .calculator-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .form-income {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input[type="number"], select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #9947cc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #a603fe;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+    }
+
+</style>
+
+<div class="calculator-container mx-auto">
+    <h1 >Income Tax Calculator</h1>
+    <div id="tax-form">
+        <div class="form-income">
+            <label for="regime">Select Tax Regime:</label>
+            <select id="regime" onchange="toggleDeductions()">
+                <option value="new">New Regime</option>
+                <option value="old">Old Regime</option>
+            </select>
+        </div>
+
+        <div class="form-income">
+            <label for="age">Select Age Group:</label>
+            <select id="age">
+                <option value="below60">Below 60</option>
+                <option value="60to80">60 to 80</option>
+                <option value="above80">Above 80</option>
+            </select>
+        </div>
+
+        <div class="form-income">
+            <label for="residentialStatus">Select Residential Status:</label>
+            <select id="residentialStatus">
+                <option value="resident">Resident</option>
+                <option value="non-resident">Non-Resident</option>
+            </select>
+        </div>
+
+        <div class="form-income">
+            <label for="income">Annual Income:</label>
+            <input type="number" id="income" placeholder="Enter your income">
+        </div>
+
+        <div id="deductions-section" style="display: none;">
+            <h2>Deductions under Old Regime</h2>
+            <div class="form-income">
+                <label for="totalDeductions">Total Deductions:</label>
+                <input type="number" id="totalDeductions" placeholder="Enter total deductions">
+            </div>
+        </div>
+
+        <div class="form-income">
+            <button type="button" onclick="calculateTax()">Calculate Tax</button>
+        </div>
+        
+    </div>
+
+    <div id="result"></div>
+
+    <div id="tax-summary" style="display: none;">
+        <h2>Tax Summary</h2>
+        <p>Total Income: ₹<span id="summary-income"></span></p>
+        <p>Total Deductions: ₹<span id="summary-deductions"></span></p>
+        <p>Taxable Income: ₹<span id="summary-taxable-income"></span></p>
+        <p>Tax Under New Regime: ₹<span id="summary-new-regime"></span></p>
+        <p>Tax Under Old Regime: ₹<span id="summary-old-regime"></span></p>
+        <p>Tax Savings by Choosing Better Regime: ₹<span id="tax-savings"></span></p>
+        <h3>Better Tax Regime: <span id="better-regime"></span></h3>
+    </div>
+    
+</div>
+<!-- <%- include('./includes/footer.ejs') %> -->
+
+<script>
+    function toggleDeductions() {
+        const regime = document.getElementById('regime').value;
+        const deductionsSection = document.getElementById('deductions-section');
+        
+        if (regime === 'old') {
+            deductionsSection.style.display = 'block';
+        } else {
+            deductionsSection.style.display = 'none';
+        }
+    }
+
+    function calculateTax() {
+        const income = parseFloat(document.getElementById('income').value);
+        const age = document.getElementById('age').value;
+        const residentialStatus = document.getElementById('residentialStatus').value;
+        let taxNewRegime = 0;
+        let taxOldRegime = 0;
+
+        if (isNaN(income) || income <= 0) {
+            document.getElementById('result').innerText = "Please enter a valid income.";
+            document.getElementById('tax-summary').style.display = 'none';
+            return;
+        }
+
+        // Calculate tax under New Regime
+        taxNewRegime = calculateNewRegimeTax(income);
+
+        // Calculate tax under Old Regime if selected
+        const totalDeductions = parseFloat(document.getElementById('totalDeductions').value) || 0;
+        taxOldRegime = calculateOldRegimeTax(income, totalDeductions, age, residentialStatus);
+
+        // Update summary with deductions and tax under old regime
+        document.getElementById('summary-deductions').innerText = totalDeductions.toFixed(2);
+        document.getElementById('summary-taxable-income').innerText = (income - totalDeductions).toFixed(2);
+        document.getElementById('summary-old-regime').innerText = taxOldRegime.toFixed(2);
+
+        // Update summary with income and tax under new regime
+        document.getElementById('summary-income').innerText = income.toFixed(2);
+        document.getElementById('summary-new-regime').innerText = taxNewRegime.toFixed(2);
+
+        // Determine the better tax regime
+        const betterRegime = taxNewRegime < taxOldRegime ? 'New Regime' : 'Old Regime';
+        document.getElementById('better-regime').innerText = betterRegime;
+
+        // Calculate savings by choosing the better tax regime
+        const taxSavings = betterRegime === 'New Regime' ? (taxOldRegime - taxNewRegime) : (taxNewRegime - taxOldRegime);
+        document.getElementById('tax-savings').innerText = taxSavings.toFixed(2);
+
+        // Display the tax summary
+        document.getElementById('tax-summary').style.display = 'block';
+    }
+
+    function calculateNewRegimeTax(income) {
+        let tax = 0;
+        if (income <= 250000) {
+            tax = 0;
+        } else if (income <= 500000) {
+            tax = (income - 250000) * 0.05;
+        } else if (income <= 750000) {
+            tax = (income - 500000) * 0.10 + 12500;
+        } else if (income <= 1000000) {
+            tax = (income - 750000) * 0.15 + 37500;
+        } else if (income <= 1250000) {
+            tax = (income - 1000000) * 0.20 + 75000;
+        } else if (income <= 1500000) {
+            tax = (income - 1250000) * 0.25 + 125000;
+        } else {
+            tax = (income - 1500000) * 0.30 + 187500;
+        }
+        return tax;
+    }
+
+    function calculateOldRegimeTax(income, deductions, age, residentialStatus) {
+        let taxableIncome = income - deductions;
+        if (taxableIncome < 0) taxableIncome = 0;
+
+        let tax = 0;
+        if (residentialStatus === 'non-resident') {
+            // Non-resident tax slabs
+            tax = calculateNonResidentTax(taxableIncome);
+        } else {
+            // Resident tax slabs based on age
+            if (age === 'below60') {
+                if (taxableIncome <= 250000) {
+                    tax = 0;
+                } else if (taxableIncome <= 500000) {
+                    tax = (taxableIncome - 250000) * 0.05;
+                } else if (taxableIncome <= 1000000) {
+                    tax = (taxableIncome - 500000) * 0.20 + 12500;
+                } else {
+                    tax = (taxableIncome - 1000000) * 0.30 + 112500;
+                }
+            } else if (age === '60to80') {
+                if (taxableIncome <= 300000) {
+                    tax = 0;
+                } else if (taxableIncome <= 500000) {
+                    tax = (taxableIncome - 300000) * 0.05;
+                } else if (taxableIncome <= 1000000) {
+                    tax = (taxableIncome - 500000) * 0.20 + 10000;
+                } else {
+                    tax = (taxableIncome - 1000000) * 0.30 + 110000;
+                }
+            } else if (age === 'above80') {
+                if (taxableIncome <= 500000) {
+                    tax = 0;
+                } else if (taxableIncome <= 1000000) {
+                    tax = (taxableIncome - 500000) * 0.20;
+                } else {
+                    tax = (taxableIncome - 1000000) * 0.30 + 100000;
+                }
+            }
+        }
+        return tax;
+    }
+
+    function calculateNonResidentTax(income) {
+        let tax = 0;
+        if (income <= 250000) {
+            tax = 0;
+        } else if (income <= 500000) {
+            tax = (income - 250000) * 0.05;
+        } else if (income <= 1000000) {
+            tax = (income - 500000) * 0.20 + 12500;
+        } else {
+            tax = (income - 1000000) * 0.30 + 112500;
+        }
+        return tax;
+    }
+</script>

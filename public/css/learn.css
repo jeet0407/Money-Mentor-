@@ -456,7 +456,7 @@ html{
 
 
 #header-container{
-    background-image: url("/images/learn-back2.png");
+    /* background-image: url("/images/learn-back2.png"); */
     height: 100vh;
 }
 
@@ -465,6 +465,12 @@ html{
     align-items: center;
     position: relative;
     height: 75%;
+}
+
+#hero{
+    background-image: url("/images/learn-images/learn-back2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media(max-width: 1300px){
@@ -510,7 +516,7 @@ html{
 }
 
 .leftContent{
-    margin-top: 10rem;
+    margin-top: 0rem;
     margin-left: 4rem;
     padding-right: 3rem;
     color: #03045e;
@@ -670,8 +676,9 @@ html{
         padding-left: 1rem;
     }
 
-    .leftContent{
-        margin-top: 1.3rem;
+
+    .leftContent {
+        margin-top: -7.7rem;
     }
 
     #learn{
@@ -758,11 +765,44 @@ html{
         animation: none;
     }
 
-    #boxContainer{
-        width: 90%;
-        margin-left: 0;
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin-right: 0.3rem;
+        width: 99%;
     }
+
+    .trade{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        /* height: 100%; */
+        margin-bottom: 1rem;
+        margin-left: 0;
+        padding-left: 1rem;
+
+
+        /* position: relative; */
+        /* animation: none; */
+    }
+
+    #boxContainer {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    #forexPhoto{
+        display: none;
+    }
+
+    #bondPhoto{
+    display: none;
+    }
+
 }
+ 
+
  
 
   .chp{
@@ -804,7 +844,6 @@ html{
 }
 
 
-
 @media(max-width : 1200px){
     #chp-content{
         font-size : 2rem;
@@ -821,6 +860,7 @@ html{
     #chp-content{
         font-size : 1rem;
     }
+
 }
 
 
@@ -915,21 +955,58 @@ html{
     }
 }
 
+#bearishAbandoned{
+    width: 80%;
+}
+
+#chp-hero p{
+    width: 90%;
+    margin-right: 1rem;
+}
+
+#chp-hero h1{
+    font-weight: bolder;
+}
+
 @media(max-width:600px){
 
-    #chp-content{
-        font-size: 2rem;
+    /* #finance-boxContainer{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    } */
+
+    #chp-hero h1{
+        font-size: 2.5rem;
     }
 
-    #boxContainer{
+    
+
+    #chp-hero p {
+        width: 177%;
+        font-size: 1.05rem;
+        line-height: 1.8rem;
+        padding-right: 0rem;
+    }
+
+    .finance-more{
+        display: none;
+    }
+
+    #chp-content{
+        font-size: 1rem;
+    }
+
+    #boxContainer {
         display: flex;
         /* flex-wrap: wrap; */
-       margin-left: -2.5rem;
+        margin-left: 0.5rem;
         /* height: 750vh; */
         width: 94%;
         row-gap: 1.5rem;
         gap: 1rem;
     }
+
 
     .leftContent{
         width: 100%;
@@ -947,7 +1024,6 @@ html{
         font-weight: bolder;
 
     }
-
     .methods{
         animation: none;
     }
@@ -1050,22 +1126,21 @@ html{
 #linephotu{
     width: 65vw;
     height: 70vh;
-    background-image: url('/images/line.png');
+    background-image: url('/images/learn-images/line.png');
     background-size: cover;
 }
 
 #candlephotu{
     width: 65vw;
     height: 70vh;
-    background-image: url("/images/Candle.png");
+    background-image: url("/images/learn-images/Candle.png");
     background-size: cover;
     
 }
 
 #underCandlephotu{
-    width: 35vw;
-    height: 40vh;
-    background-image: url("/images/understandCandle.png");
+    width: 60%;
+    /* background-image: url("/images/learn-images/understandCandle.png"); */
     background-size: cover;
     margin-left: 4rem;
 }
@@ -1093,14 +1168,6 @@ html{
         padding-bottom: 5rem;
     }
 
-    #tob{
-        width: 100%;
-        margin-left:0;
-        padding-left: 3rem;
-        line-height: 4rem;
-        display: none;
-
-    }
 
     html , body{
         width: 100%;
@@ -1173,6 +1240,22 @@ html{
     }
 }
 
+#hangingManChart{
+    width: 80%;
+}
+
+#dragonChart{
+    width: 80%;
+}
+
+#stock_Ex{
+    width: 90%;
+}
+
+#time_interval{
+    width: 90%;
+}
+
 
 /* chp2*/
 
@@ -1220,6 +1303,23 @@ html{
 #supplyPhotu img{
     width: 100%;
     height: 80%;
+}
+
+
+#chapter-heading{
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+@media(max-width:1040px){
+    
+    #tob{
+        
+        display: none;
+
+    }
 }
 
 @media(max-width:600px){
@@ -1692,25 +1792,21 @@ html{
     margin-left: 7rem;
 }
 
-@media screen and(max-width:750px) {
-    .chp {
-        width: 90%;
-    }
-}
+/* @media screen6 */
 
 
-#finance-boxContainer{
+#finance-boxContainer {
     /* justify-content: center; */
-    padding: 3rem;
-    padding-top: 1rem;
+    padding: 0rem;
+    padding-top: 0rem;
     /* justify-content: space-evenly; */
-    margin-left: 3.7rem;
-    /* width: 100%; */
+    width: 90%;
     /* background-color: rgb(255, 255, 255); */
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
-    row-gap:2rem;
+    gap: 1.5rem;
+    row-gap: 1rem;
+    margin-left: 2rem;
 }
 
 .finance-chp{
@@ -1744,4 +1840,8 @@ html{
    filter: blur(10px);
    z-index: -3;
    opacity: 0.2;
+}
+
+#finance-left{
+    margin-top: 0;
 }

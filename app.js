@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const port = 3000;
+const port = 8080;
 const User = require("./Model/User.js");
 const methodOverride = require("method-override");
 const flash = require("connect-flash");
@@ -43,7 +43,7 @@ store.on("error", () => {
   console.log("ERROR IN MONGO SESSION STORE");
 });
 
-app.set("view engine", "ejs");
+app.set("view engine","ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
@@ -212,9 +212,14 @@ app.get('/terms/:id',(req,res)=>{
   }else return next();
 })
 
-app.get('/aboutUs',(req,res)=>{
-  res.render('aboutUs.ejs');
+app.get('/incomeTax',(req,res)=>{
+  res.render('incomeTax.ejs');
 })
+
+app.get('/aboutUs',wrapAsync(async (req,res)=>{
+  const feedback=await Feedback.find({});
+  res.render('aboutUs.ejs',{feedback});
+}))
 
 //Not Found Handler
 app.all("*", (req, res) => {

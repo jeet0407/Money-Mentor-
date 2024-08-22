@@ -161,12 +161,12 @@
 
         </div>
 
-        <div class="locate">
+        <div class="locate" style="width: 100%;">
 
             <h2>Location</h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.6299713642247!2d72.78262877543243!3d21.167119180517076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04dec8b56fdf3%3A0x423b99085d26d1f9!2sSardar%20Vallabhbhai%20National%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1723039267860!5m2!1sen!2sin"
-                style=" width: 30vw; height: 30vh; border:0;" allowfullscreen="" loading="lazy"
+                style=" width: 100%; height: 50vh; border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <p>NIT Surat
                     Ichchhanath, Surat, Gujarat</p>
@@ -240,14 +240,32 @@
 
         </div>
 
-        <div class="my-4">
-            <h1>Top Comments :</h1>
-            <div class="row">
-                <div class="col-md-3">
-                    <h4>Username</h4>
-                    <p>Comment</p>
+        <div class="my-4 container">
+            <% if(feedback.length!=0){ %>
+                <div class="text-center my-4 text-black fs-2 text-decoration-underline" >Top Comments</div>
+                <div class="row row-cols-sm-2 row-cols-md-3 justify-content-center">
+                    <% for(let i=0;i<feedback.length && i<6;i++){ %>
+                        <a>
+                            <div class="col card my-3">
+                                <div class="card-body my-3" style="max-height: 200px; overflow: scroll;">
+                                    <h5 class="card-title d-flex align-items-center gap-2 " style="color:#6540FF"> <img
+                                        src="/images/expenseTracker/user.gif"
+                                        alt="brand"
+                                        class="col-1 brand"
+                                      /><%= feedback[i].username %></h5>
+                                    <p class="card-text text-black d-flex  gap-2"><i class="fa-solid fa-comment" style="color: #ffd43b"></i><%= feedback[i].message %></p>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
                 </div>
-            </div>
+            <% } else{ %>
+                <div class="d-flex flex-column">
+                    <div class="text-center my-4 text-black fs-2">Waiting for your comments ...</div>
+                    <a class="btn" href="/user/feedback" style="color: #6540FF;" >Comment Now!</a>
+                </div>
+            <% } %>
+            
         </div>
 
     </div>

@@ -1,5 +1,3 @@
-const { string } = require("joi");
-
 let wealthChart;
 
 document.getElementById('wealthForm').addEventListener('keydown', function(event) {
