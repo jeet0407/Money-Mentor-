@@ -1,3 +1,5 @@
+const { string } = require("joi");
+
 let wealthChart;
 
 document.getElementById('wealthForm').addEventListener('keydown', function(event) {
@@ -30,6 +32,7 @@ function calculateWealthScore() {
 
     const wealthScore = (w1 * income) + (w2 * savings) + (w3 * investments) + (w4 * realEstate) + (w5 * debt) + (w6 * otherAssets);
 
+    localStorage.setItem('wealthScorage', String(wealthScore.toFixed(2)));
     document.getElementById('result').innerText = wealthScore.toFixed(2);
 
     const ctx = document.getElementById('wealthChart').getContext('2d');

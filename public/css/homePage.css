@@ -1624,6 +1624,7 @@ body {
 
 .main-body {
     opacity: 0;
+    overflow-y: auto    ;
 }
 
 .closeNavbar {

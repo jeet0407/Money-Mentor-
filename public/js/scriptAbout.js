@@ -109,54 +109,6 @@ function handleSwipe() {
     resetSlider();
 }
 
-// Start the slider
-startSlider();
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.style.overflowY = "hidden";
-    const navbar = document.getElementById('navbar');
-    const headText = document.querySelector('.head-text > h1');
-    const heroHeight = document.querySelector('.hero');
-
-    const adjustMarginTop = () => {
-        const navbarHeight = navbar.offsetHeight;
-        headText.style.marginTop = navbarHeight + navbarHeight + 'px';
-        heroHeight.style.height = window.innerHeight - navbarHeight + 'px';
-    };
-    adjustMarginTop();
-    window.addEventListener('resize', adjustMarginTop);
-
-    const apiKey = '0oXwZ5we7CdXnjHknsCTHyMT4O5PSZYm';
-    const stockSymbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'FB', 'BRK.B', 'JNJ', 'V', 'WMT'];
-
-    function getRandomStockSymbol() {
-        const randomIndex = Math.floor(Math.random() * stockSymbols.length);
-        return stockSymbols[randomIndex];
-    }
-
-    const stockSymbol = getRandomStockSymbol();
-    const url = `https://financialmodelingprep.com/api/v3/quote/${stockSymbol}?apikey=${apiKey}`;
-
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const stock = data[0];
-            if (stock) {
-                const stockName = stock.name || "No name available";
-                const stockPrice = stock.price ? `$${stock.price}` : "No price available";
-                const stockUrl = `https://financialmodelingprep.com/financial-summary/${stockSymbol}`;
-
-                document.getElementById('stock-name').textContent = stockName;
-                document.getElementById('stock-price').textContent = `Current Price: ${stockPrice}`;
-                document.getElementById('stock-link').href = stockUrl;
-            } else {
-                document.getElementById('stock-name').textContent = "No stock data available";
-                document.getElementById('stock-price').textContent = "";
-                document.getElementById('stock-link').href = "#";
-            }
-        })
-        .catch(error => console.error('Error fetching the stock data:', error));
-});
 
 function goToCalculator() {
     window.location = '/calculator/emi';

@@ -71,7 +71,80 @@ function handleSwipe() {
 
 // Start the slider
 startSlider();
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.style.overflowY = "hidden";
+    const navbar = document.getElementById('navbar');
+    const headText = document.querySelector('.head-text > h1');
+    const heroHeight = document.querySelector('.hero');
 
+    const adjustMarginTop = () => {
+        const navbarHeight = navbar.offsetHeight;
+        headText.style.marginTop = navbarHeight + navbarHeight + 'px';
+        heroHeight.style.height = window.innerHeight - navbarHeight + 'px';
+    };
+    adjustMarginTop();
+    window.addEventListener('resize', adjustMarginTop);
+
+    const apiKey = '0oXwZ5we7CdXnjHknsCTHyMT4O5PSZYm';
+    const stockSymbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'FB', 'BRK.B', 'JNJ', 'V', 'WMT'];
+
+    function getRandomStockSymbol() {
+        const randomIndex = Math.floor(Math.random() * stockSymbols.length);
+        return stockSymbols[randomIndex];
+    }
+
+    // const apiKey = '66c4e8f513d110.81219008';
+    // const apiUrl = `https://eodhistoricaldata.com/api/news?api_token=66c4e8f513d110.81219008&s=general`;
+    const apiUrl = `https://eodhd.com/api/news?s=AAPL.US&offset=0&limit=10&api_token=demo&fmt=json`;
+
+    async function fetchNews() {
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            const jeeti= Math.floor(Math.random()*10);
+
+            let newsHtml = '';
+            newsHtml += `<div style="display: flex; align-items: center; flex-direction: column; background-color: #d9d9d90d; border-radius: 10%; padding: 1rem; width: 90%; max-width: 400px; box-sizing: border-box; overflow: hidden;">
+    <h2 id="stock-name" style="font-size: 1.2rem; margin: 0.5rem 0; text-align: center; word-wrap: break-word;">${data[jeeti].title}</h2>
+    <p id="stock-price" style="
+        font-size: 1rem; 
+        margin: 0.5rem 0; 
+        text-align: center; 
+        word-wrap: break-word; 
+        overflow: hidden;
+        display: -webkit-box; 
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; 
+        line-clamp: 3; 
+        max-height: 4.5em;
+        position: relative;
+    ">
+        ${data[jeeti].content}
+        <span style="position: absolute; bottom: 0; right: 0; background-color: #d9d9d90d;">...</span>
+    </p>
+    <a id="stock-link" href="${data[jeeti].link}" target="_blank" style="text-decoration: none; width: 100%;">
+        <div class="kushal" style="color: #000; text-align: center; padding: 0.75rem;border-radius: 5px; font-size: 1rem;">More info...</div>
+    </a>
+</div>
+
+            `;
+            document.getElementById('vibrator').innerHTML = newsHtml;
+        } catch (error) {
+            document.getElementById('vibrator').innerHTML = 'Failed to load news.';
+            console.error('Error fetching news:', error);
+        }
+    }
+
+    fetchNews();
+    try {
+        x= localStorage.getItem('wealthScorage');
+        if(x===null)    x='0.0'
+        document.getElementById('llmao').innerHTML=`Current Financial Score: ${x}`;
+    }
+    catch(error) {
+        document.getElementById('llmao').innerHTML=`Current Financial Score: 0.0`,console.log('chalna2');
+    }
+});
 function goToCalculator() {
     window.location = '/calculator/emi';
 }
